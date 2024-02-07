@@ -122,7 +122,7 @@
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -160,7 +160,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/17/Barra/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/17/Barra1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -178,7 +178,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/12/17/Barra/" class="post-title-link" itemprop="url">Untitled</a>
+          <a href="/2023/12/17/Barra1/" class="post-title-link" itemprop="url">Barra(1)</a>
         </h2>
 
         <div class="post-meta-container">
@@ -196,7 +196,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-02-07 23:08:57" itemprop="dateModified" datetime="2024-02-07T23:08:57+08:00">2024-02-07</time>
+      <time title="Modified: 2024-02-07 23:23:00" itemprop="dateModified" datetime="2024-02-07T23:23:00+08:00">2024-02-07</time>
     </span>
 
   
@@ -209,9 +209,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="因子模型笔记">因子模型笔记</h1>
-<h2 id="asset-pricing---多因子模型-consumption-based-model">Asset pricing -&gt; 多因子模型 / consumption-based model</h2>
-<p>资产定价理论假设完美市场（没有交易费用，没有信息差），return是正态分布，还有efficient set theorem（投资者能交易到sharpe最高的投资组合）经典的模型有：CPAM（单因子），Black CAPM（双因子），Fama-French三因子。</p>
+          <h2 id="asset-pricing---多因子模型-consumption-based-model">Asset pricing -&gt; 多因子模型 / consumption-based model</h2>
+<p>资产定价理论假设完美市场（没有交易费用，没有信息差），return是正态分布，还有efficient set theorem（投资者能交易到sharpe最高的投资组合）经典的模型有：CAPM（单因子），Black CAPM（双因子），Fama-French三因子。</p>
 <p>套利定价理论（APT）主要用来预测收益率，它假设资产和投资组合的预期收益率与一些未知的系统性因子的预期收益率(<span class="math inline">\(\beta\)</span>)线性相关，资产的预期独特收益率(<span class="math inline">\(\alpha\)</span>)为0.</p>
 <p>多因子模型研究：股票的（超额）收益率期望在界面上为什么会有差异。选择的因子代表了收益率的一种结构，一旦结构给定后，个股的预期收益率完全由它在这些因子上的暴露决定。怎样找到最好的因子结构？（哪些因子使个股在截面上的预期收益率区分度高）</p>
 <ul>
@@ -252,17 +251,15 @@ R_{it} = \beta_i^{&#39;}\lambda_t + \alpha_{it}, i=1,2,...,N for\ each\ t
 <li><p>Barra模型。Barra模型和上述模型都有区别：Barra模型的因子暴露不用时序回归得到，而是直接来自基本面或者技术面数据。用时序回归得到的<span class="math inline">\(\beta\)</span>的变化注定是缓慢的，且回归中有大量的噪声；直接用基本面或技术面数据作为<span class="math inline">\(\beta\)</span>可以更快捕捉公司的变化，但需要进行标准化，常见方法是先取log然后标准化。</p></li>
 </ul>
 <p>resource: <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/40984029">石川知乎：股票多因子模型的回归检验</a></p>
-<h3 id="cpam模型">CPAM模型</h3>
-<p>CPAM模型是因子模型的鼻祖，基于资产定价理论，它有几个重要的理论假设：</p>
+<h3 id="capm模型">CAPM模型</h3>
+<p>CAPM模型是因子模型的鼻祖，基于资产定价理论，它有几个重要的理论假设：</p>
 <ol type="1">
 <li>efficient set theorem：所有投资者都根据two-parameter model选择投资组合，也就是最大化return，最小化variance，并能买到这样的投资组合。</li>
 <li>complete agreement：在t-1期的资产价格清算后，所有投资者就t-1到t期的资产收益率的联合分布达成一致，且这个分布式真实的，也就是模型测试时的分布。</li>
 <li>borrowing and lending at a risk-free rate：所有投资者都可以以无风险利率（与市场资产的风险无相关性）借款和放款</li>
 </ol>
-<figure>
-<img src="/2023/12/17/Barra/test/1702801274796.png" alt="1702801274796"><figcaption aria-hidden="true">1702801274796</figcaption>
-</figure>
-<p>根据假设1，所有投资者的投资组合都会在minimum variance frontier for risky assets上。根据假设3，投资者可以任意调整无风险资产和风险资产的比例，所以市场上所有的资产都满足<span class="math inline">\(R_f-T\)</span>线（Mean-variance-efficient frontier）。CPAM模型的表达式：</p>
+<p><img src="/2023/12/17/Barra1/capm.png"></p>
+<p>根据假设1，所有投资者的投资组合都会在minimum variance frontier for risky assets上。根据假设3，投资者可以任意调整无风险资产和风险资产的比例，所以市场上所有的资产都满足<span class="math inline">\(R_f-T\)</span>线（Mean-variance-efficient frontier）。CAPM模型的表达式：</p>
 <p><span class="math display">\[
 E(R_i) = R_f + [E(R_M)-R_f)]\beta_{iM},\ i=1,...,N.
 \]</span></p>
@@ -271,7 +268,7 @@ E(R_i) = R_f + [E(R_M)-R_f)]\beta_{iM},\ i=1,...,N.
 \beta_{iM} = \frac{cov(R_i, R_M)}{\sigma^2(R_M)}
 \]</span></p>
 <blockquote>
-<p>CPAM模型的假设过强，特别是第三条被证明是错误的，所以在实证检验中是失败的，但奠定了一个资产定价因子模型的基础。</p>
+<p>CAPM模型的假设过强，特别是第三条被证明是错误的，所以在实证检验中是失败的，但奠定了一个资产定价因子模型的基础。</p>
 </blockquote>
 <h3 id="fama-french三因子模型">Fama-French三因子模型</h3>
 <p>这个模型在CAPM的基础上从ICAPM(Merton, 1973)的"multifactor efficient"和Ross(1976)的套利定价理论得到灵感，在CAPM的基础上增加了市值因子(SMB)和价值因子(HML，用的是账面市值比)。他们认为虽然这两个因子本身不是”状态变量“（反应投资者自身状态，比如劳动收入，CPI），但它们反映了一些未被市场收益率定价的（和<span class="math inline">\(\beta_{iM}\)</span>无关的），产生风险的状态变量。他们发现，市值小的股票之间的相关性比和市值大的票之前的相关性更强；高book-to-market(value)股票之前的相关性比和低book-to-market(growth)股票之前的相关性更强。他们还发现在市值和价值因子里能找到和一些基本面之间（比如收入和销售量）的相关性类似的规律。</p>
@@ -288,7 +285,7 @@ R_{it} - R_{ft} = \alpha_i + \beta_{iM}(R_{Mt} - R_{ft}) + \beta_{is}SMB_t + \be
 <p>source: The Capital Asset Pricing Model: Theory and Evidence by E.F. Fama and K.R. French</p>
 <h2 id="risk-model">Risk Model</h2>
 <p>Risk Model和以资产定价理论为基础的模型不一样，主要的研究目的更偏实际应用： 1. 简化risk covariance matrix的计算，在two-parameter model中，投资者要最小化投资组合的波动率，这个通常需要计算组合内所有资产的收益率协方差矩阵，当资产很多的时候这个矩阵很大，难以计算。用因子模型可以把这个矩阵的维度大幅降低。 2. risk factor model的可解释性更强，方便归因，而且也有更强的鲁棒性和泛化能力。 所以risk model没有过多的假设，只求在实际中能准确预测和归因risk，所以在做法上与资产定价模型不太一样。</p>
-<p>barra模型的因子分为：factors = common factors (risk indices+industries) + specific factors，其中common factors是资产之间共享的一些特征，有相似特征的资产会有相似的波动模式，specific factors是每个资产独有的风险，barra没有像CPAM,Fama-French一样假设specific factors相加应该为0，因为没有完美市场假设。barra模型的表达式为： <span class="math display">\[
+<p>barra模型的因子分为：factors = common factors (risk indices+industries) + specific factors，其中common factors是资产之间共享的一些特征，有相似特征的资产会有相似的波动模式，specific factors是每个资产独有的风险，barra没有像CAPM,Fama-French一样假设specific factors相加应该为0，因为没有完美市场假设。barra模型的表达式为： <span class="math display">\[
 r_i = \sum^K_{k=1}x_{ik}f_k + u_i \tag{1}
 \]</span> 其中<span class="math inline">\(x_{ik}\)</span>是资产i对因子k的暴露度，<span class="math inline">\(f_k\)</span>是因子k的因子收益率，<span class="math inline">\(u_i\)</span>是资产i的独立收益率。 用这样的因子模型可以把投资组合的风险分解为： <span class="math display">\[
 \sigma^2_P = Var(h_pXf+h_pu) = Var(h_pXf) + Var(h_pu) \\
@@ -314,7 +311,7 @@ f_s^S = \sum(v_iX_{iS})r_i
 <li>pure factor portfolios：这是通过式1的多因子模型回归得到的，这样构建的factor portfolios对其他风格因子的暴露为0。</li>
 </ol>
 <blockquote>
-<p>因为在OLS中，factor return=<span class="math inline">\((X^T X)^{-1} X^T y\)</span>，portfolio weight=$(X^T X)^{-1} X^T <span class="math inline">\(，portfolio exposure=\)</span>(X^T X)^{-1} X^T X=E$</p>
+<p>因为在OLS中，factor return=<span class="math inline">\((X^T X)^{-1} X^T y\)</span>，portfolio weight=<span class="math inline">\((X^T X)^{-1} X^T\)</span>，portfolio exposure=<span class="math inline">\((X^T X)^{-1} X^T X=E\)</span></p>
 </blockquote>
 <p>通过构建和比较这两种factor portfolios，文章中设计了几个衡量共线性的方法： 1. 计算两种portfolio中个股权重的相关性。如果相关性较低，可以认为是共线性带来的影响。 2. 计算两种factor return的相关性。 3. 因子杠杆比率。计算方式为<span class="math inline">\(L_k=\frac{\sum_i|\Omega_{ik}^P|}{\sum_i|\Omega_{ik}^S|}\)</span>，这里的k代表因子k，P代表pure portfolio，S代表simple portfolio，<span class="math inline">\(\Omega\)</span>为投资组合中个股的权重，<span class="math inline">\(L_k\)</span>即为pure portfolio的净权重和仓位和除以simple portfolio的仓位和。这个值应该大于1，因为pure factor portfolio会为了hedge掉对其他因子的暴露而增加long/short仓位，所以这个值越大的因子会受更多共线性的影响。</p>
 
