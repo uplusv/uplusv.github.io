@@ -21,23 +21,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
+    <meta name="description" content="因子模型笔记 Asset pricing -&gt; 多因子模型 &#x2F; consumption-based model 资产定价理论假设完美市场（没有交易费用，没有信息差），return是正态分布，还有efficient set theorem（投资者能交易到sharpe最高的投资组合）经典的模型有：CPAM（单因子），Black CAPM（双因子），Fama-French三因子。 套利定价理论（A">
+<meta property="og:type" content="article">
 <meta property="og:title" content="TechNotes">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="http://example.com/2023/12/17/Barra/index.html">
 <meta property="og:site_name" content="TechNotes">
+<meta property="og:description" content="因子模型笔记 Asset pricing -&gt; 多因子模型 &#x2F; consumption-based model 资产定价理论假设完美市场（没有交易费用，没有信息差），return是正态分布，还有efficient set theorem（投资者能交易到sharpe最高的投资组合）经典的模型有：CPAM（单因子），Black CAPM（双因子），Fama-French三因子。 套利定价理论（A">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2023/12/17/Barra/test/1702801274796.png">
+<meta property="article:published_time" content="2023-12-17T13:32:13.739Z">
+<meta property="article:modified_time" content="2024-02-07T15:08:57.511Z">
 <meta property="article:author" content="uplusv">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/12/17/Barra/test/1702801274796.png">
 
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2023/12/17/Barra/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2023/12/17/Barra/","path":"2023/12/17/Barra/","title":""}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>TechNotes</title>
+<title> | TechNotes</title>
   
 
 
@@ -64,7 +70,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">TechNotes</h1>
+      <p class="site-title">TechNotes</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -92,7 +98,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -105,6 +111,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%A0%E5%AD%90%E6%A8%A1%E5%9E%8B%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">因子模型笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#asset-pricing---%E5%A4%9A%E5%9B%A0%E5%AD%90%E6%A8%A1%E5%9E%8B-consumption-based-model"><span class="nav-number">1.1.</span> <span class="nav-text">Asset pricing -&gt; 多因子模型 &#x2F; consumption-based model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cpam%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.1.1.</span> <span class="nav-text">CPAM模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fama-french%E4%B8%89%E5%9B%A0%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.1.2.</span> <span class="nav-text">Fama-French三因子模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#risk-model"><span class="nav-number">1.2.</span> <span class="nav-text">Risk Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%A0%E5%AD%90%E6%A0%87%E5%87%86%E5%8C%96%E5%92%8C%E5%8A%A0%E6%9D%83%E5%9B%9E%E5%BD%92"><span class="nav-number">1.2.1.</span> <span class="nav-text">因子标准化和加权回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#factor-portfolios-and-colinearity"><span class="nav-number">1.2.2.</span> <span class="nav-text">Factor Portfolios and colinearity</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -150,16 +157,17 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/17/Barra/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -173,13 +181,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | TechNotes">
+      <meta itemprop="name" content=" | TechNotes">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/12/17/Barra/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -209,7 +217,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="因子模型笔记">因子模型笔记</h1>
+        <h1 id="因子模型笔记">因子模型笔记</h1>
 <h2 id="asset-pricing---多因子模型-consumption-based-model">Asset pricing -&gt; 多因子模型 / consumption-based model</h2>
 <p>资产定价理论假设完美市场（没有交易费用，没有信息差），return是正态分布，还有efficient set theorem（投资者能交易到sharpe最高的投资组合）经典的模型有：CPAM（单因子），Black CAPM（双因子），Fama-French三因子。</p>
 <p>套利定价理论（APT）主要用来预测收益率，它假设资产和投资组合的预期收益率与一些未知的系统性因子的预期收益率(<span class="math inline">\(\beta\)</span>)线性相关，资产的预期独特收益率(<span class="math inline">\(\alpha\)</span>)为0.</p>
@@ -318,7 +326,6 @@ f_s^S = \sum(v_iX_{iS})r_i
 </blockquote>
 <p>通过构建和比较这两种factor portfolios，文章中设计了几个衡量共线性的方法： 1. 计算两种portfolio中个股权重的相关性。如果相关性较低，可以认为是共线性带来的影响。 2. 计算两种factor return的相关性。 3. 因子杠杆比率。计算方式为<span class="math inline">\(L_k=\frac{\sum_i|\Omega_{ik}^P|}{\sum_i|\Omega_{ik}^S|}\)</span>，这里的k代表因子k，P代表pure portfolio，S代表simple portfolio，<span class="math inline">\(\Omega\)</span>为投资组合中个股的权重，<span class="math inline">\(L_k\)</span>即为pure portfolio的净权重和仓位和除以simple portfolio的仓位和。这个值应该大于1，因为pure factor portfolio会为了hedge掉对其他因子的暴露而增加long/short仓位，所以这个值越大的因子会受更多共线性的影响。</p>
 
-      
     </div>
 
     
@@ -326,161 +333,22 @@ f_s^S = \sum(v_iX_{iS})r_i
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/07/GAN1/" rel="prev" title="GAN(1)">
+                  <i class="fa fa-chevron-left"></i> GAN(1)
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/07/GAN1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="uplusv">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TechNotes">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | TechNotes">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/07/GAN1/" class="post-title-link" itemprop="url">GAN(1)</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-07-07 11:12:24" itemprop="dateCreated datePublished" datetime="2022-07-07T11:12:24+08:00">2022-07-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-08-21 18:53:05" itemprop="dateModified" datetime="2022-08-21T18:53:05+08:00">2022-08-21</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>这篇文章总结了一些我最近看的苏神的博客，最近为了做实验室的pre看了GAN和VAE的几篇，感触非常深。之前学AI都没有理解到背后的理论基础，一直感觉很虚，这种空虚感终于在生成模型这边得到填补了。</p>
-<h2 id="gan的基本概念">GAN的基本概念</h2>
-<p><img src="/2022/07/07/GAN1/1.png" alt="GAN的概率图拓扑"><br>
-作为一个生成模型，GAN和VAE一样对真实数据做了一个基本的假设，即存在隐变量<span class="math inline">\(z\)</span>和可观测变量<span class="math inline">\(x\)</span>，我们可以根据隐变量给出可观测变量<span class="math inline">\(z \to x\)</span>。通常会对隐变量的概率分布做一些假设，在GAN中这个分布只需要便于采样，在大部分文献中都是标准正态分布<span class="math inline">\(z \sim N(0,I)\)</span>。假设可观测变量<span class="math inline">\(x\)</span>，即真实图片服从真实数据分布<span class="math inline">\(x \sim p_{data}\)</span>，由模型生成的图片<span class="math inline">\(\hat{x}=G(z)\)</span>服从另一个数据分布<span class="math inline">\(\hat{x} \sim p_{model}\)</span>。生成模型<span class="math inline">\(G\)</span>以隐变量为输入，要学习到<strong>从正态分布到分布</strong><span class="math inline">\(p_{data}\)</span>的映射，也就是尽量减少<span class="math inline">\(p_{model}\)</span>和<span class="math inline">\(p_{data}\)</span>之间的差异。提到分布之间的差异，就容易想到用类似KL散度的分布差异度量为损失，优化这个损失就好了。但是<span class="math inline">\(p_{data}\)</span>和<span class="math inline">\(p_{model}\)</span>都没有解析式，要如何度量这个差异就是GAN和VAE都要解决的问题。<br>
-<span class="math display">\[\underset{G}{min}\ \ KL(p_{model}||p_{data}) \tag{1}\]</span>VAE用一个编码器<span class="math inline">\(E(x)\)</span>来辅助达成目标，GAN则提出了用另一个叫分辨器的网络<span class="math inline">\(D(x)\)</span>。</p>
-<h2 id="博弈论理解">博弈论理解</h2>
-<p>博弈论理解是发明者Goodfellow的论文中的解释，最直观，也是我长期停留的一个阶段。</p>
-<p>从博弈论的角度看，GAN中的两个网络<span class="math inline">\(D(x)\)</span>和<span class="math inline">\(G(z)\)</span>就是两个想要达成不同目的的玩家。分辨器<span class="math inline">\(D(x)\)</span>想要分辨出真实图片<span class="math inline">\(x\)</span>和假图片<span class="math inline">\(\hat{x}\)</span>，而生成器<span class="math inline">\(G(z)\)</span>就是不让分辨器分清楚。分辨器的任务是一个二分类任务，它的损失可以用一个交叉熵损失来表示，于是这个博弈就可以表达为: <span class="math display">\[ \underset{G}{min}\ \underset{D}{max}\ \ V(D,G)=\mathbb{E}_{x \sim p_{data}}[logD(x)]+\mathbb{E}_{z \sim p_{z}}[1-logD(G(z))] \tag{2} \]</span> 在论文中，作者提出这个方法可以成立是因为在这个式子达到全局最优时，<span class="math inline">\(p_{data}=p_{model}\)</span>成立，所以它能达成我们最初的目的。这个证明分为两步：<br>
-1. 给定生成器<span class="math inline">\(G\)</span>，分辨器<span class="math inline">\(D\)</span>的最优解是<span class="math display">\[D^*=\frac{p_{data}(x)}{p_{data}(x)+p_{model}(x)} \tag{3}\]</span> 2. 当分辨器<span class="math inline">\(D\)</span>达成最优解后，优化<span class="math inline">\(C(G)\)</span>，当<span class="math inline">\(p_{data}=p_{model}\)</span>时达到最优解 <span class="math display">\[ \begin{aligned}
-    C(G)&amp;=\mathbb{E}_{x \sim p_{data}}[logD^*(x)]+\mathbb{E}_{z \sim p_{z}}[1-logD^*(G(z))] \\
-    &amp;=\mathbb{E}_{x \sim p_{data}}[logD^*(x)]+\mathbb{E}_{x \sim p_{model}}[1-logD^*(x)] \\
-    &amp;=\mathbb{E}_{x \sim p_{data}}[log\frac{p_{data}(x)}{p_{data}(x)+p_{model}(x)}]+\mathbb{E}_{x \sim p_{model}}[log\frac{p_{model}(x)}{p_{data}(x)+p_{model}(x)}]
-    \end{aligned} \tag{4}\]</span></p>
-<p>这个理论证明中存在无法实现的两个“坑”:</p>
-<blockquote>
-<p>第一，理论上应该先求出最优的分辨器，再求出最优的生成器。但是在实践中是交替优化的，这样就很难达到理论上的gloabel optimal。<br>
-第二，求期望应该遍历整个数据分布，最少也应该是整个数据集，但是在实践中只能取到一个batch。</p>
-</blockquote>
-<p>直观来看，如果优化良好,分辨器<span class="math inline">\(D^*\)</span>在<span class="math inline">\(p_{model}\)</span>过剩的地方给出更高的<span class="math inline">\(1-log(D(x))\)</span>，在<span class="math inline">\(p_{model}\)</span>不足的地方更小，生成器<span class="math inline">\(G\)</span>则会促使<span class="math inline">\(p_{model}\)</span>往分数小的地方跑，直到收敛到<span class="math inline">\(p_{data}\)</span>。<img src="/2022/07/07/GAN1/2.png" alt="博弈论法的直观理解"></p>
-<h2 id="f-ganf散度理解">f-GAN：f散度理解</h2>
-<p>Nowozin等人2016年发表的论文从优化概率分布的角度补充了GAN的理论依据（这篇论文要求很高的数学功底，我只看懂了一小部分，只能从比较粗浅的角度理解）。</p>
-<p>GAN和VAE都是概率生成模型，目标是拟合真实数据的概率分布，就像第一节说的，可以用一个度量方法（比如KL散度）直接写出想要优化的目标函数。Goodfellow的解释中也说明了，他提出的GAN可以拟合Jensen-Shannon散度，f-GAN这篇文章证明了GAN框架可以将度量方法扩充到所有f散度，Goodfellow提出的GAN可以作为其中的一个特例。以下是f散度的定义:</p>
-<blockquote>
-<p>给定具有连续概率密度函数<span class="math inline">\(p\)</span>和<span class="math inline">\(q\)</span>的概率分布<span class="math inline">\(P\)</span>和<span class="math inline">\(Q\)</span>，<span class="math inline">\(f\)</span>散度为<br>
-<span class="math display">\[D_f(P||Q)=\int_{\mathcal{X}}q(x)f \bigg( \frac{q(x)}{p(x)} \bigg) dx\]</span></p>
-<p>其中，函数<span class="math inline">\(f\)</span>需要满足:<br>
-1. 是一个下半连续凸函数<br>
-2. f(1)=0</p>
-</blockquote>
-<p>作者从另一篇关于“变分估计f散度”的论文出发，进一步推导出了概率生成模型的优化方法，作者称为“Variational Divergence Minimization”(VDM)。</p>
-<p><strong>第一步，求出f散度的变分下界。</strong><br>
-下半连续凸函数<span class="math inline">\(f\)</span>都存在一个对偶函数 <span class="math display">\[f^*(t)=sup_{u \in dom_f}\{ut-f(u)\} \]</span> 所以函数<span class="math inline">\(f\)</span>可以写成<span class="math inline">\(f(u)=sup_{t \in dom_{f^*}}\{tu-f^*(t)\}\)</span>。把它代入f散度公式，可以得到一个下界： <span class="math display">\[ 
-\begin{aligned}
-D_f(P||Q)&amp;=\int_{\mathcal{X}}q(x)\ sup_{t \in dom_{f^*}}\{t\frac{p(x)}{q(x)}-f^*(t)\}dx \\
-&amp;\geq sup_{T \in \mathcal{T}}\bigg(\int_{\mathcal{X}}p(x)T(x)dx- \int_{\mathcal{X}}q(x)f^*(T(x))dx \bigg) \\
-&amp;=sup_{T \in \mathcal{T}}(\mathbb{E}_{x\sim P}[T(x)]-\mathbb{E}_{x\sim Q}[f^*(T(x))])
-\end{aligned}
- \tag{5}
-\]</span> 其中<span class="math inline">\(\mathcal{T}\)</span>是任意函数类<span class="math inline">\(T:\mathcal{X} \to \mathbb{R}\)</span>。根据<span class="math inline">\(f\)</span>函数的性质，可以对上式中的下界关于<span class="math inline">\(T\)</span>求导，可以得到 <span class="math display">\[T^*(x)=f^{&#39;} \bigg(\frac{p(x)}{q(x)} \bigg). \tag{6}\]</span></p>
-<p><strong>第二步，建立模型。</strong><br>
-模型需要优化的就是<span class="math inline">\((5)\)</span>式。但是<span class="math inline">\(T^*(x)\)</span>显然不好求，就用一个神经网络来拟合它，这个神经网络就是GAN中的分辨器<span class="math inline">\(D(x)\)</span>，它的输入是一个样本，输出是一个分数，我们把分辨器的参数表示为<span class="math inline">\(\omega\)</span>。生成器<span class="math inline">\(G(x)\)</span>的功能就是拟合数据分布<span class="math inline">\(Q\)</span>，它的参数表示为<span class="math inline">\(\theta\)</span>。我们的模型就是要最小化损失： <span class="math display">\[F(\theta, \omega)=\mathbb{E}_{x\sim P}[T_{\omega}(x)]-\mathbb{E}_{x\sim Q_\theta}[f^*(T_{\omega}(x))]. \tag{7}\]</span></p>
-<p><strong>第三步，实现。</strong><br>
-在实操过程中，上面的目标函数还有两个需要简化的地方。<br>
-第一点，期望需要用mini-batch采样来近似。<br>
-第二点，注意在第一步的推导中有<span class="math inline">\(t \in dom_{f^*}\)</span>这个条件，也就是说<span class="math inline">\(T(x)\)</span>的值域是有要求的。可以进一步把<span class="math inline">\(T_\omega(x)\)</span>拆分为<span class="math inline">\(T_\omega(x)=g_f(V_\omega(x))\)</span>，<span class="math inline">\(V_\omega(x)\)</span>是一个没有值域限制的任意函数，而<span class="math inline">\(g_f:\mathbb{R} \to dom_{f^*}\)</span>是一个压缩值域的激活函数。代入后，目标函数可以表示为： <span class="math display">\[F(\theta, \omega)=\mathbb{E}_{x\sim P}[g_f(V_{\omega}(x))]+\mathbb{E}_{x\sim Q_\theta}[-f^*(g_f(V_{\omega}(x)))]. \tag{8}\]</span><br>
-作者列出了一些常见的f散度和它们对应的<span class="math inline">\(f*\)</span>，<span class="math inline">\(dom_{f^*}\)</span>，推荐的激活函数<span class="math inline">\(g_f\)</span>。<br>
-<img src="/2022/07/07/GAN1/3.png" alt="常见f散度和推荐激活函数"> 把JS散度对应的公式塞进目标函数，配合分辨器的sigmoid激活函数就可以得到Goodfellow提出的目标函数<span class="math inline">\((2)\)</span>式。</p>
-<p>作者还提出了几个实操中的点，比如原GAN用的是交替优化但其实可以用一步同时优化两个网络；Goodfellow发现优化生成器时，优化<span class="math inline">\(\mathbb{E}_{x \sim Q_\theta}[-logD_\omega(x)]\)</span>比优化<span class="math inline">\(\mathbb{E}_{x \sim Q_\theta}[log(1-D_\omega(x))]\)</span>更好，可以证明这个改动仍然符合本文框架的推导；<span class="math inline">\(f^{&#39;}(1)\)</span>可以作为分辨器输出的分数的分界点，比<span class="math inline">\(f^{&#39;}(1)\)</span>大可以认为是从真实分布<span class="math inline">\(P\)</span>来的，小于它可以认为是从<span class="math inline">\(Q\)</span>来的。</p>
-<h2 id="wgan最优传输理论">WGAN：最优传输理论</h2>
-<p>WGAN提出了一种f散度之外的分布度量方式——Earth-Mover(EM)距离或<strong>Wasserstein距离</strong>: <span class="math display">\[W(P_r, P_g)=\underset{\gamma \in \prod(P_r, P_g)}{min} \mathbb{E}_{(x,y)\sim \gamma}[||x-y||]\tag{8}\]</span>其中<span class="math inline">\(\gamma(x,y)\)</span>表示边缘分布为<span class="math inline">\(P_r\)</span>和<span class="math inline">\(P_g\)</span>的联合分布，<span class="math inline">\(\prod (P_r, P_g)\)</span>则是由<span class="math inline">\(\gamma(x,y)\)</span>组成的集合。直观地理解，可以把两个分布的距离看作把<span class="math inline">\(P_r\)</span>变为<span class="math inline">\(P_g\)</span>的成本，<span class="math inline">\(\gamma\)</span>代表运输方案，<span class="math inline">\(\gamma(x,y)\)</span>代表运输方案中要从<span class="math inline">\(x\)</span>搬多少到<span class="math inline">\(y\)</span>，<span class="math inline">\(||x-y||\)</span>就是两点之间的距离/运输成本。EM距离就是所有运输方案中最优的那种所需要的代价。<br>
-作者选取EM距离是因为KL、JS散度、TV距离等度量方法都会在某些情况下没有良好定义，导致无法提供梯度。作者证明，</p>
-<blockquote>
-<ol type="1">
-<li>生成函数<span class="math inline">\(g:\mathcal{Z}\times \mathbb{R}^d\to \mathcal{X}\)</span>关于<span class="math inline">\(\theta\)</span>连续，则<span class="math inline">\(W(P_r,P_\theta)\)</span>连续。<br>
-</li>
-<li><span class="math inline">\(g_\theta(z)\)</span>满足条件：对于一个给定的<span class="math inline">\(\mathcal{Z}\)</span>的概率分布<span class="math inline">\(p\)</span>，存在局部Lipschitz常数<span class="math inline">\(L(\theta, z)\)</span>使<br>
-<span class="math display">\[\mathbb{E}_{z \sim p}[L(\theta,z)]&lt;+ \infty\]</span>则<span class="math inline">\(W(P_r,P_\theta)\)</span>在任何地方都连续，几乎任何地方都可导。</li>
-</ol>
-</blockquote>
-<p>所以EM距离是更适合用于GAN训练的度量方式。</p>
-<p>EM距离原本的形式不太好算，可以把它转化为<strong>对偶问题</strong>：<br>
-<span class="math display">\[W(P_r, P_\theta)=\underset{\lVert f \rVert_L \leq 1}{sup} \mathbb{E}_{x\sim P_r}[f(x)]-\mathbb{E}_{x\sim P_\theta}[f(x)] \tag{9}\]</span>其中<span class="math inline">\(f(x)\)</span>是一个为数据分布打分的标量函数<span class="math inline">\(f:\mathcal{X} \to \mathbb{R}\)</span>，它满足1-Lipschitz约束： <span class="math display">\[\lVert f \rVert_L=\underset{x\neq y}{max}\frac{\lvert f(x)-f(y) \rvert}{\lVert x-y \rVert}\leq1\]</span>也就是满足 <span class="math display">\[\lvert f(x)-f(y) \rvert \leq \lVert x-y \rVert.\]</span>转化为GAN的min-max的形式就是： <span class="math display">\[\underset{G}{min}\ \underset{D, \lVert D \rVert_L\leq1}{max}\ \ V(D,G)=\mathbb{E}_{x \sim p_{data}}[D(x)]+\mathbb{E}_{z \sim p_{z}}[-D(G(z))] \tag{10}\]</span> 接下来的问题就是<strong>如何满足L约束</strong>？<br>
-1. 原作者提出的方法是权重截断，即在每次梯度更新后强迫所有权重在一个区间内，比如<span class="math inline">\(\mathcal{W}=[-0.01,0.01]^l\)</span>。<br>
-2. WGAN-GP，梯度裁剪。这个方法是对权重的梯度截断，即保证<span class="math inline">\(\lVert \triangledown D \rVert \leq1\)</span>。实现方式是在判别器的损失中加入正则化项<span class="math inline">\(\mathbb{E}_{x\sim r(x)}[(\lVert \triangledown D \rVert-1)^2]\)</span>，其中<span class="math inline">\(r(x)\)</span>应该均匀分布在全空间，但是实现时可以采用在真假样本间差值的方法。<br>
-3. 谱归一化，即约束网络每一层的权重的谱范数<span class="math inline">\(\lVert W \rVert_2=\underset{x\neq 0}{max}\frac{\lVert Wx \rVert}{\lVert x \rVert}\)</span>，它就是<span class="math inline">\(W^TW\)</span>的最大特征根的平方根。这个方法有更好的理论性质和较松的约束，但仍然需要保证每一层都满足约束，所以还是会减少模型可拟合的函数空间。</p>
-<h2 id="总结">总结</h2>
-<p>本文总结了GAN进化过程中的三种常用理论解释。虽然理论解释不能直接导向好的生成结果，但是在学习理论的过程中能更加清楚问题的含义。从GAN的发展历程来看，理论视角和工程技巧相辅相成才造成如今GAN优秀的性能。</p>
-<h3 id="参考文献">参考文献</h3>
-<p>[1] Goodfellow I, Pouget-Abadie J, Mirza M, et al. Generative adversarial nets[J]. Advances in neural information processing systems, 2014, 27.<br>
-[2] Goodfellow I. Nips 2016 tutorial: Generative adversarial networks[J]. arXiv preprint arXiv:1701.00160, 2016.<br>
-[3] Nowozin S, Cseke B, Tomioka R. f-gan: Training generative neural samplers using variational divergence minimization[J]. Advances in neural information processing systems, 2016, 29.<br>
-[4] <a target="_blank" rel="noopener" href="https://arxiv.org/abs/1701.07875">Wasserstein GAN</a><br>
-[5] 苏剑林. (Sep. 29, 2018). 《f-GAN简介：GAN模型的生产车间 》<a target="_blank" rel="noopener" href="https://kexue.fm/archives/6016">Blog post</a>.<br>
-[6] 苏剑林. (Nov. 07, 2018). 《WGAN-div：一个默默无闻的WGAN填坑者 》<a target="_blank" rel="noopener" href="https://kexue.fm/archives/6139">Blog post</a>.<br>
-[7] 苏剑林. (Oct. 07, 2018). 《深度学习中的Lipschitz约束：泛化与生成模型 》<a target="_blank" rel="noopener" href="https://kexue.fm/archives/6051">Blog post</a>.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
 
 
 
